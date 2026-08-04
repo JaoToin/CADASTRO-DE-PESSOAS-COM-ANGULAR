@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VARIÁVEIS DE CORES
+   VARIÁVEIS DE CORES (Identidade Visual)
    ========================================================================== */
    :root {
     --cor-fundo: #F3F4F6;        
@@ -9,6 +9,7 @@
     --cor-texto: #334155;        
     --cor-borda: #CBD5E1;        
     --cor-texto-claro: #FFFFFF;  
+    --cor-perigo: #EF4444;       /* Vermelho para o botão Remover */
 }
 
 /* ==========================================================================
@@ -33,7 +34,7 @@ body {
 }
 
 /* ==========================================================================
-   CABEÇALHO
+   CABEÇALHO E NAVEGAÇÃO
    ========================================================================== */
 header {
     background-color: var(--cor-primaria);
@@ -42,6 +43,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; 
+    gap: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -73,25 +76,25 @@ nav a:hover {
 #corpo-central {
     flex-grow: 1; 
     display: flex;
-    flex-direction: column; /* Coloca os itens um abaixo do outro */
-    align-items: center;    /* Centraliza na tela */
+    flex-direction: column;
+    align-items: center;
     padding: 40px 20px;
-    gap: 20px;              /* Espaço entre a barra de busca e a tabela */
+    gap: 20px;
 }
 
 /* ==========================================================================
-   BARRA DE PESQUISA (Abaixo do cabeçalho)
+   BARRA DE PESQUISA (Seção #consulta e Input #consulta)
    ========================================================================== */
-#area-consulta {
+section#consulta {
     width: 100%;
-    max-width: 1100px; /* Alinha perfeitamente com a largura da tabela */
+    max-width: 1100px;
     display: flex;
-    justify-content: flex-end; /* Joga a barra de pesquisa para a direita */
+    justify-content: flex-end; /* Alinha a pesquisa para a direita */
 }
 
-#area-consulta input {
+input#consulta {
     padding: 12px 20px;
-    border-radius: 8px; /* Borda levemente arredondada, padrão de sistemas */
+    border-radius: 8px; 
     border: 1px solid var(--cor-borda);
     outline: none;
     width: 350px;
@@ -101,14 +104,10 @@ nav a:hover {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-#area-consulta input:focus {
+input#consulta:focus {
     border-color: var(--cor-secundaria);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
     transform: translateY(-2px);
-}
-
-#area-consulta input::placeholder {
-    color: #94A3B8;
 }
 
 /* ==========================================================================
@@ -121,7 +120,7 @@ nav a:hover {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    overflow-x: auto; 
+    overflow-x: auto; /* Permite rolagem no celular */
 }
 
 /* ==========================================================================
@@ -130,7 +129,7 @@ nav a:hover {
 table {
     width: 100%;
     border-collapse: collapse; 
-    min-width: 700px; 
+    min-width: 800px; /* Aumentado para caber as novas colunas */
 }
 
 caption {
@@ -176,6 +175,27 @@ tbody tr:hover {
 }
 
 /* ==========================================================================
+   AÇÕES: ESTILIZANDO "EDITAR" E "REMOVER"
+   (Pega as duas últimas colunas da tabela)
+   ========================================================================== */
+td:nth-last-child(2) {
+    color: var(--cor-secundaria); /* Azul para Editar */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td:nth-last-child(1) {
+    color: var(--cor-perigo);     /* Vermelho para Remover */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td:nth-last-child(1):hover,
+td:nth-last-child(2):hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
    RODAPÉ (FOOTER)
    ========================================================================== */
 footer {
@@ -215,16 +235,11 @@ footer a:hover {
         gap: 15px;
     }
 
-    nav {
-        flex-direction: column;
-        gap: 10px;
+    section#consulta {
+        justify-content: center; /* Centraliza a busca no celular */
     }
 
-    #area-consulta {
-        justify-content: center; /* Centraliza a barra de busca no celular */
-    }
-
-    #area-consulta input {
+    input#consulta {
         width: 100%; 
     }
 
