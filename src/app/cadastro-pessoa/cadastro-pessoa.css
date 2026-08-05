@@ -171,6 +171,21 @@ footer a:hover {
     color: #3B82F6;
 }
 
+button{
+    height: 30px;
+    width: 50%;
+    margin: 0% 25% 0% 25%;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--cor-secundaria);
+    color: #FFFFFF;
+}
+
+button:hover{
+    background-color: #1E3A8A;
+    transform:translateY(-2px);
+
+}
 /* ==========================================================================
    RESPONSIVIDADE (CELULARES E TABLETS)
    ========================================================================== */
