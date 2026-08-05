@@ -23,6 +23,7 @@ export class CadastroPessoa {
       id: 1,
       nome: this.nome,
       email: this.email,
+      cpf: this.cpf,
       dataNascimento: this.dataNascimento
     })
   }
