@@ -1,10 +1,9 @@
-<link rel="stylesheet" href="consulta.css">
 
 <div id="geral">
     <header>
         <h3>TABELA DE CONSULTA</h3>
         <nav>
-            <a href="#" routerLink="/cadastropessoa/">FORMULARIO</a>  
+            <a href="#" routerLink="/cadastropessoa/">FORMULARIO</a>
             <a href="consulta.html">CONSULTA</a>
         </nav>
     </header>
@@ -28,30 +27,38 @@
                     <th>DATA DE NASCIMENTO</th>
                     <th>UF</th>
                     <th>MUNICÍPIO</th>
-                    <th></th>
-                    <th></th>
+
                   </tr>
 
                 </thead>
 
                 <tbody>
 
-                  <tr>
-                    <td>JOÃO GUEDES</td>
-                    <td>JGUEDES@GMAIL.COM</td>
-                    <td>000.***.***-**</td>
-                    <td>24/06/2008</td>
-                    <td>SERGIPE</td>
-                    <td>ARACAJU</td>
-                    <td>EDITAR</td>
-                    <td>REMOVER</td>
-                  </tr>
+
+                  @for(elem of listaTabela; track elem.id) {
+                    <tr>
+                        <td>{{elem.nome}}</td>
+                        <td>{{elem.email}}</td>
+                        <td>{{elem.cpf}}</td>
+                        <td>{{elem.dataNascimento}}</td>
+                        <td>{{elem.uf}}</td>
+                        <td>{{elem.mu}}</td>
+                        <td>EDITAR</td>
+                        <td>REMOVER</td>
+
+                    </tr>
+                } @empty {
+                    <tr>
+                        <!-- colspan="2" faz a mensagem ocupar as duas colunas -->
+                        <td colspan="2" style="text-align: center;">NENHUMA PESSOA CADASTRADA</td>
+                    </tr>
+                }
 
                 </tbody>
 
               </table>
-              
-            
+
+
         </div>
     </main>
 

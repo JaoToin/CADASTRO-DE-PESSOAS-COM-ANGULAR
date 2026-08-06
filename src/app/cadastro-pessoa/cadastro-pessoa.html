@@ -1,11 +1,10 @@
-<link rel="stylesheet" href="cadastro-pessoa.css">
 
 <div id="geral">
     <header>
         <h3>CADASTRO DE CLIENTES</h3>
         <nav>
-            
-            <a href="#" routerLink="/cadastropessoa">FORMULARIO</a>  
+
+            <a href="#" routerLink="/cadastropessoa">FORMULARIO</a>
 
             <a href="#" routerLink="/consulta">CONSULTA</a>
 
@@ -18,24 +17,24 @@
             <form id="formulario">
                 <h2>DADOS PESSOAIS</h2>
 
-                <input type="text" id="nome" name="nome" required placeholder="DIGITE SEU NOME">
+                <input type="text" id="nome" name="nome" required placeholder="DIGITE SEU NOME" [(ngModel)]="nome">
 
-                <input type="email" id="email" name="email" required placeholder="DigiteSeuEmail@gmail.com"> 
+                <input type="email" id="email" name="email" required placeholder="DigiteSeuEmail@gmail.com" [(ngModel)]="email">
 
-                <input type="number" id="cpf" name="cpf" required placeholder="000.000.000-00">
+                <input type="number" id="cpf" name="cpf" required placeholder="000.000.000-00" [(ngModel)]="cpf">
 
-                <input type="date">
+                <input type="date" id="data" name="data" required [(ngModel)]="dataNascimento">
 
-                <select name="uf" id="uf">
+                <select name="uf" id="uf" name="uf" [(ngModel)]="uf">
 
                     <option value="UF">UF</option>
                     <option value="SE">SERGIPE </option>
                     <option value="BH"> BAIHA </option>
                     <option value="CE"> CEARÁ </option>
-                      
+
                 </select>
 
-                <select name="municipio" id="municipio">
+                <select name="municipio" id="municipio" [(ngModel)]="mu">
 
                     <option value="MU">MUNICIPIO</option>
                     <option value="ST-AM">SANTO AMARO</option>
@@ -45,7 +44,7 @@
 
                 </select>
 
-                <button type="submit">CADASTRAR</button>
+                <button type="button" (click)="salvar()">CADASTRAR</button>
             </form>
         </div>
     </main>

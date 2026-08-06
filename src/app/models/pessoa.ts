@@ -4,4 +4,6 @@ export class Pessoa {
     email? : string
     cpf? : string
     dataNascimento? : string
+    uf?: string
+    mu?: string
 }
