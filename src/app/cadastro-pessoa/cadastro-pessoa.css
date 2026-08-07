@@ -121,6 +121,7 @@ nav a:hover {
     background-color: #F8FAFC;
     transition: all 0.3s ease;
     outline: none;
+    color: black;
 }
 
 /* Efeito ao focar ou passar o mouse nos inputs */
@@ -177,12 +178,12 @@ button{
     margin: 0% 25% 0% 25%;
     border-radius: 25px;
     border: none;
-    background-color: var(--cor-secundaria);
+    background-color: #1e3a8a;
     color: #FFFFFF;
 }
 
 button:hover{
-    background-color: #1E3A8A;
+    background-color: #b4c3eb;
     transform:translateY(-2px);
 
 }

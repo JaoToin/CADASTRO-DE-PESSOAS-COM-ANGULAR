@@ -1,0 +1,124 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES (Paleta Profissional)
+   ========================================================================== */
+   :root {
+    --cor-fundo: #F3F4F6;        /* Cinza muito claro para o fundo da página */
+    --cor-card: #FFFFFF;         /* Branco para o fundo do formulário */
+    --cor-primaria: #1E3A8A;     /* Azul marinho profundo (cores de sistemas) */
+    --cor-secundaria: #3B82F6;   /* Azul claro para destaques e hovers */
+    --cor-texto: #334155;        /* Cinza escuro para leitura confortável */
+    --cor-borda: #CBD5E1;        /* Cinza claro para bordas dos inputs */
+    --cor-texto-claro: #FFFFFF;  /* Branco para textos no header/footer */
+}
+
+/* ==========================================================================
+   RESET BÁSICO E ESTRUTURA GERAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Container principal para manter o footer sempre no final */
+#geral {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   CABEÇALHO (HEADER) E NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h3 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+   footer {
+    background-color: #1E293B; /* Cinza bem escuro/azulado */
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer h4 {
+    font-weight: 400;
+    font-size: 0.9em;
+    color: #FFFFFF;
+}
+
+footer a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+    color: #FFFFFF;
+}
+
+footer a:hover {
+    color: #3B82F6;
+}
+
+
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+      padding: 20px;
+  }
+
+  nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  nav a {
+      margin-left: 0;
+  }
+}
