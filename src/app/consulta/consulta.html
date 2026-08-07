@@ -43,8 +43,12 @@
                         <td>{{elem.dataNascimento}}</td>
                         <td>{{elem.uf}}</td>
                         <td>{{elem.mu}}</td>
-                        <td>EDITAR</td>
-                        <td>REMOVER</td>
+                        <td>
+                            <a [routerLink]="['/cadastropessoa', elem.id]">EDITAR</a>
+                        </td>
+                        <td>
+                            <button type="button" (click)="remover(elem.id)">REMOVER</button>
+                        </td>
 
                     </tr>
                 } @empty {

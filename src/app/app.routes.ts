@@ -22,6 +22,11 @@ export const routes: Routes = [
     },
 
     {
+        path: 'cadastropessoa/:id',
+        component: CadastroPessoa
+    },
+
+    {
         path: 'consulta',
         component: Consulta
     }
